@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="../js/checkForm.js"></script>
+<script type="text/javascript">
+	
+</script>
+</head>
+<body>
+<div align="center">
+	<form action="../dbservepage/regerist.jsp" onsubmit="return check()">
+		<table>
+			<tr>
+				<td>用户名:</td>
+				<td><input type="text" id = "textUser" name = "textUser" title="用户名" onblur="checkUserName()"/></td>
+				<!--  <td><span id = "tips_username">*用户名由6-18位字符组成</span></td>			
+				-->
+			</tr>
+			<tr>
+				<td>密&nbsp;&nbsp;码</td>
+				<td><input id = "password" onblur="checkPassword()" type="password" name = "txtpwd" title="密码"/></td>
+				<!--  <td><span id = "tips_password">*密码由6-18位字符组成，必须包含数字字母标点符号</span></td>			
+				-->
+			</tr>
+			<tr>
+				<td>确认密码</td>
+				<td><input type="repassword" id = "repassword" onblur="reCheckPassword()" name = "txtRpwd" title="密码"/></td>
+				<!--<td><span id = "tips_repeatpassword">*请再次输入你的密码</span></td>-->			
+			</tr>
+			<tr>
+				<td>性&nbsp;&nbsp;别：</td>
+				<td>
+					<input name="gender" type="radio" value="男"/>男
+					<input name="gender" type="radio" value="女"/>女
+				</td>
+			</tr>
+			<tr>
+				<td>头&nbsp;&nbsp;像：</td>
+				<td>
+					<select id = "photo" name="img" onchange="photoChange()">
+						<option value="1">头像1</option>
+						<option value="2" >头像2</option>
+						<option value="3" >头像3</option>
+						<option value="4" >头像4</option>
+					</select>
+				</td>
+				<td>
+					<img id = "photoshow" width="80" height="80" alt="头像" src="../imgs/1.jpg"/>
+				</td>
+			</tr>
+			<tr>
+				<td>联系电话：</td>
+				<td><input id = "phonenumber" onblur="checkPhoneNumber()" type="text" name = "phonenumber" title="密码"/></td>
+				<!--  <td><span id = "tips_repeatpassword">*输入您的联系电话</span></td>	-->		
+			</tr>
+			<tr>
+				<td>电子邮箱：</td>
+				<td><input onblur="checkEmail()" id = "email" type="text" name = "email" title="密码"/></td>
+				<!--  <td><span id = "tips_repeatpassword">*请输入您的email</span></td>	-->		
+			</tr>
+			<tr>
+				<td>
+					<input type="submit" value="注册" />
+					<input type="reset" value="重置" />
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+</body>
+</html>
