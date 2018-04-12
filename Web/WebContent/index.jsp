@@ -13,7 +13,8 @@
 -->
  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
  
-
+ <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+ <script type="text/javascript" src="js/indexpage.js"></script>
  
 </head>
 <body style="background-color:#FFFFE0">
@@ -33,10 +34,12 @@
             <div class="row">
                 <div class="col-md-offset-2 col-md-8">
                     <ul class="nav nav-tabs">
-                        <li role="presentation"><a>首页</a></li>
-                        <li role="presentation"><a>电影</a></li>
-                        <li role="presentation"><a>音乐</a></li>
-                       	<li role="presentation"><a>小说</a></li>
+                        <li role="presentation"><a href="index.jsp">首页</a></li>
+                        <li role="presentation" onclick="movieLoad()"><a>电影</a></li>
+                        <li role="presentation" onclick="musicLoad()"><a>音乐</a></li>
+                       	<li role="presentation" onclick="novelLoad()"><a>小说</a></li>
+                       	<li role="presentation" onclick="photoLoad()"><a>图片</a></li>
+                       	
                     </ul>
                 </div>
                 <div class="dropdown col-md-2">
@@ -58,9 +61,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-7 col-md-offset-1">
-				<div class="row">
-                <div class="col-md-7 ">
-                    <!-轮播组件-->
+				<div class="row" id="bodypage">
+                	<div class="col-md-7">
+                    	<!-轮播组件-->
 	                    <div id="carousel-example-generic" style="height:256px;width:450px" class="carousel slide" data-ride="carousel">
 	                        <!-- Indicators -->
 	                        <ol class="carousel-indicators">
@@ -101,10 +104,13 @@
 	                            <span class="sr-only">Next</span>
 	                        </a>
 	                    </div>
+	                </div>
+	                <div class="col-md-4 col-md-offset-1">
+	                	网站简介
 	                </div>					
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4" id="right_page">
 				右边导航栏显示内容
 			</div>
 		</div>
@@ -112,12 +118,15 @@
 
 	
 
- 
+<!--  
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+-->
 <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <!-- 
 <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 -->
+
 </body>
+
 </html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+
+	<package name="default" namespace="" extends="struts-default">
+	
+	 	<action name="movelist" class="controler.MovieListControl" method="execute">
+	 		<result name="success">/media_page/movies.jsp</result>
+	 	</action>
+	 	<action name="mediarightpage" class="controler.MediaRightListController" method="execute">
+	 		<result name="success">/right_page/media_right_page.jsp</result>
+	 	</action>
+	 	<action name="musiclist" class="controler.MusicController" method="execute">
+	 		<result name="success">/media_page/music.jsp</result>
+	 	</action>
+	 	<action name="novellist" class="controler.NovelController" method="execute">
+	 		<result name="success">/media_page/novel.jsp</result>
+	 	</action>
+	 	<action name="photolist" class="controler.PhotoController" method="execute">
+	 		<result name="success">/media_page/photos.jsp</result>
+	 	</action>
+	</package>
+   
+
+    <!-- Add packages here -->
+
+</struts>
