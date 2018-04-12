@@ -13,13 +13,17 @@
 		{
 			session.setAttribute("username", null);
 	%>
-	<%=username %>已经成功退出
+	<div align="center">
+		<h3><%=username %>已经成功退出</h3>
+	</div>
 	<%
 		}
 		else
 		{
 	%>
-	您还未成功登录！！！！
+	<div align="center">
+		<h3>您还未成功登录！！！</h3>
+	</div>
 	<%		
 		}
 	%>

@@ -12,7 +12,10 @@
 		if(username == null)
 		{
 	%>
-		您还未登录
+	<div align="center">
+		<h3>您还未登录</h3>
+	</div>
+		
 	<%
 		}
 		else
