@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="db.*" import="org.hibernate.* " import="java.util.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -48,7 +48,7 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" style="background-color:#d3f779" aria-labelledby="dropdownMenu1">
-                        <li><a>试用</a></li>
+                        <li><a onclick="movieManage()">电影</a></li>
 						<li><a>试用</a></li>	                       
                         <li role="separator" class="divider"></li>
                         <li><a href="#">仅为Owner提供...</a></li>
@@ -60,8 +60,8 @@
 	
 	<div class="container">
 		<div class="row">
-			<div class="col-md-7 col-md-offset-1">
-				<div class="row" id="bodypage">
+			<div class="col-md-8" id="bodypage">
+				<div class="row" >
                 	<div class="col-md-7">
                     	<!-轮播组件-->
 	                    <div id="carousel-example-generic" style="height:256px;width:450px" class="carousel slide" data-ride="carousel">
@@ -105,13 +105,95 @@
 	                        </a>
 	                    </div>
 	                </div>
-	                <div class="col-md-4 col-md-offset-1">
-	                	网站简介
-	                </div>					
+	                <div class="col-md-4">
+	                	<div class="row">
+	                		<div class="col-md-10 col-md-offset-1">
+	                		
+			                	<h4 class="text-muted">网站简介:</h4>
+			                	<p class="text-success">
+			                		分享自己的电影，音乐，图片
+			                		<br/>
+			                		<br/>
+			                		<hr>
+			                		<span class="text-warning">由于服务器配置问题，不能实现电影等大资源的下载</span>
+			                	</p>
+			                </div>
+	                	</div>
+	                </div>										
+					
+				</div>
+				<%
+					Movie m = new Movie();
+					Session session1 = HibernateTools.getSession();
+					String hql = "from Movie";
+					
+					Transaction tr = session1.beginTransaction();
+					
+					Query query = session1.createQuery(hql);
+					
+					List<Movie> movieList = query.list();
+					//String real = ServletActionContext.getServletContext().getRealPath("/upload");
+					for(Movie m1 : movieList)
+					{
+						System.out.println(m1.getMovieName());
+						m1.getPicName();
+					}
+					
+				%>
+				<div>
+					<%
+					for(Movie m1 : movieList)
+					{
+						System.out.println(m1.getMovieName());
+						%>
+						<div class="row" style="margin-top: 20px">
+							<div class="col-md-4">
+								<img alt="电影图片" style="height: 200px;width: 150px" src=<%="upload/"+m1.getPicName() %>>
+							</div>
+							<div class="col-md-8">
+								<h4><%=m1.getMovieName() %></h4>
+								<p><%=m1.getComment() %></p>
+							</div>
+						</div>
+						<%
+					}
+					%>					
 				</div>
 			</div>
 			<div class="col-md-4" id="right_page">
-				右边导航栏显示内容
+				<div>
+    				<h4>关注我</h4>
+    				<hr />
+		    <div style="margin-bottom:40px" class="row">
+		        <div class="col-md-3">
+		            <img src="imgs/xinlang.png" height="40" width="40"/>
+		            <div class="row">
+		                <div class="col-md-12">
+		                    新浪微博
+		                </div>
+		            </div>
+		        </div>
+		        <div class="col-md-3">
+		            <img src="imgs/qq.png" height="40" width="40" />
+		            <div class="row">
+		                <div class="col-md-12">
+		                    腾讯QQ
+		                </div>
+		            </div>
+		        </div>
+		        <div class="col-md-3">
+		            <img src="imgs/weixin.png" height="40" width="40" />
+		            <div class="row">
+		                <div class="col-md-12 col-md-offset-1">
+		                    微信
+		                </div>
+		            </div>
+		        </div>
+    		</div>
+    
+				</div>
+				<h4>最新更新</h4>
+				<hr>
 			</div>
 		</div>
 	</div>

@@ -86,3 +86,65 @@ function photoLoad(){
 
 	mediaLeftChange();	
 }
+
+//显示加载电影管理界面
+function movieManage(){
+	$.ajax({
+		type:'post',
+		url:'moviemanage',
+		dataType:'html',
+		success: function(msg){
+			document.getElementById("bodypage").innerHTML = msg;  
+		},
+		error: function () {
+			alert('error');
+		}
+	});
+
+	mediaLeftChange();	
+}
+
+function imgPreview(fileDom){
+	var reader = new FileReader();
+	var file = fileDom.files[0];
+	reader.onload = function(e){
+		//获取图片dom
+        var img = document.getElementById("preview");
+        //图片路径设置为读取的图片
+        img.src = e.target.result;
+	};
+	reader.readAsDataURL(file);
+}
+
+//上传电影信息
+function uploadMovie(){
+	var name = $("#moviename").val();
+	var picture = $("#moviepicture")
+	
+	alert(name+"sdf" + picture.val());
+	
+	var formData = new FormData();
+	formData.append("moviename",name);
+	formData.append("moviepicture",$('#moviepicture')[0].files[0]);
+	formData.append("moviecontent",$("#moviecontent").val());
+	formData.append("moviepicturetype",picture.val())
+	
+	alert(formData)
+	
+	$.ajax({
+		type:'post',
+		url:'moveUpload',
+		processData: false, // 告诉jQuery不要去处理发送的数据
+	    contentType: false, // 告诉jQuery不要去设置Content-Type请求头
+		data:formData,
+		success:function(responseStr){
+			document.getElementById("bodypage").innerHTML = responseStr;
+		},
+		errot:function(res){
+			alert(res);
+		}
+	});
+	
+	
+	
+}

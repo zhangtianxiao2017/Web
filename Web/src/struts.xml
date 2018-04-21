@@ -25,6 +25,12 @@
 	 	<action name="photolist" class="controler.PhotoController" method="execute">
 	 		<result name="success">/media_page/photos.jsp</result>
 	 	</action>
+	 	<action name="moviemanage" class="controler.MovieManage" method="execute">
+	 		<result name="success">/manage_page/movie_add.jsp</result>
+	 	</action>
+	 		<action name="moveUpload" class="upload.MovieUpload" method="execute">
+	 		<result name="success">/manage_page/movie_manager.jsp</result>
+	 	</action>
 	</package>
    
 
