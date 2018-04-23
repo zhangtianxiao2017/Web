@@ -135,7 +135,7 @@
 					//String real = ServletActionContext.getServletContext().getRealPath("/upload");
 					for(Movie m1 : movieList)
 					{
-						System.out.println(m1.getMovieName());
+						//System.out.println(m1.getMovieName());
 						m1.getPicName();
 					}
 					

@@ -104,6 +104,54 @@ function movieManage(){
 	mediaLeftChange();	
 }
 
+
+//得到movieadd的页面
+function movieAdd(){
+	$.ajax({
+		type:'post',
+		url:'moveUploadpage',
+		dataType:'html',
+		success: function(msg){
+			document.getElementById("bodypage").innerHTML = msg;  
+		},
+		error: function () {
+			alert('error');
+		}
+	});
+
+	mediaLeftChange();	
+}
+
+
+//修改电影信息
+function movie_modify(){
+	
+}
+
+//删除电影信息
+function movie_delete(it){
+	var id1 = $(it).siblings("p").text();
+	alert(id1);
+
+	$.ajax({
+		type:'post',
+		url:'movieDelete',
+		data:{movieid:id1},
+		dataType:'html',
+		success: function(msg){
+			document.getElementById("bodypage").innerHTML = msg;  
+		},
+		error: function () {
+			alert('error');
+		}
+	});
+
+	mediaLeftChange();	
+	
+	
+}
+
+//图片回显
 function imgPreview(fileDom){
 	var reader = new FileReader();
 	var file = fileDom.files[0];

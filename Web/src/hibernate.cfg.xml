@@ -32,9 +32,23 @@
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!-- 本地数据库   -->
         <property name="connection.url">jdbc:mysql://localhost/test</property>
         <property name="connection.username">root</property>
         <property name="connection.password">zhangtianxiao</property>
+        
+        
+        <!-- 远程数据库   
+        <property name="connection.url">jdbc:mysql://localhost/test</property>
+        <property name="connection.username">Ubuntu</property>
+        <property name="connection.password">123ztxZTX$</property>
+        -->
+       
+        <!-- 远程数据库
+        <property name="connection.url">jdbc:mysql://138.197.198.216:3306/test</property>
+        <property name="connection.username">Ubuntu</property>
+        <property name="connection.password">123ztxZTX$</property>
+         -->
         
         
         <property name="hibernate.c3p0.mzx_size">20</property>
