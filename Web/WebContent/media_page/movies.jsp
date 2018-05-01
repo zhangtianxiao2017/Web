@@ -33,10 +33,10 @@
 						%>
 						<div class="row" style="margin-top: 20px">
 							<div class="col-md-4">
-								<img alt="电影图片" style="height: 200px;width: 150px" src=<%="upload/"+m1.getPicName() %>>
+								<img alt="电影图片" style="height: 200px;width: 150px" src=<%=m1.getCoverurl() %>>
 							</div>
 							<div class="col-md-8">
-								<h4><%=m1.getMovieName() %></h4>
+								<h4><%=m1.getTitle() %>(<span><img alt="豆瓣" height="30px" width="30px" src="imgs/douban.png">评分：<%=m1.getRate() %></span>)</h4>
 								<p><%=m1.getComment() %></p>
 							</div>
 						</div>

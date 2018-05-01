@@ -29,7 +29,7 @@
 				{
 					%>
 				<tr>
-					<td><%=m1.getMovieName() %></td>
+					<td><%=m1.getTitle() %></td>
 					<td><%=m1.getComment() %></td>
 					
 					<td>
